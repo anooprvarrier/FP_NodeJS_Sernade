@@ -1,0 +1,22 @@
+Node Js Promises Handson
+
+Rewrite the snippet in 'index.js' using Promises to fetch the JSON data.
+
+Run the install command to install the packages
+
+Create a file named 'Promise.js' using the command 'touch promise.js' {{execute}}, and write the code using 'Promises' to fetch JSON data which resides in users.JSON
+
+Use the promisifyAll of bluebird package.
+
+Ensure you promisify the File System. Execute 'nohup node promise.js > output.txt' command before running the test command.
+
+The promise.js should run on port 3000.
+
+Click the 'Run Test' button to check your score.
+
+Check the port 'echo http://localhost:3000/users > url.txt'.  
+
+
+Test command:
+
+if [[ $(grep -io -e "promisifyAll" -e "then" -e "bluebird" promise.js | wc -l) -gt 1 && $(curl -v --silent localhost:3000/users --stderr - | grep -io -e "Valek" -e "Bea" -e "Frediani" | wc -l) -gt 1 ]]; then echo "FS_SCORE:100%";else echo "FS_SCORE:0%"; fi
